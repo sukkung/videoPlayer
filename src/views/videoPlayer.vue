@@ -1,6 +1,7 @@
 <template>
   <div class="video-player">
     <video-container :options='options'></video-container>
+    <video-panel class="panel"></video-panel>
   </div>
 </template>
 
@@ -21,11 +22,12 @@
 import { defineAsyncComponent, reactive } from 'vue'
 export default {
   components: {
-    VideoContainer: defineAsyncComponent(() => import('../components/container.vue'))
+    VideoContainer: defineAsyncComponent(() => import('../components/container.vue')),
+    videoPanel: defineAsyncComponent(() => import('../components/menu/bottom.vue'))
   },
   setup() {
     const options = reactive({
-      source: 'sdaksndjkh'
+      source: require('@/assets/img/video.mp4')
     })
     return {
       options
@@ -34,6 +36,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import '@/assets/css/video.scss'
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <video>
-    <source :src="options">
+  <video width="320">
+    <source :src="options.source">
   </video>
 </template>
 
