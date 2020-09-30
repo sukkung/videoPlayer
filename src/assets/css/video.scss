@@ -1,8 +1,19 @@
 .video-player{
     position: relative;
-    .panel{
+    $videoPanelHeight: 80px;
+    .video-panel{
         position: absolute;
-        left: 5%;
-        bottom: 5%;
+        left: 0%;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        &__bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: $videoPanelHeight;
+            background-color: rgba(#fff, 0.6);
+        }
     }
 }
