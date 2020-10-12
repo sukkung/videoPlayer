@@ -21,8 +21,8 @@
 import { defineAsyncComponent, defineComponent } from 'vue'
 export default defineComponent({
   components: {
-    VideoControl: defineAsyncComponent(() => import('./control.vue')),
-    VideoProcess: defineAsyncComponent(() => import('./process.vue'))
+    VideoControl: defineAsyncComponent(() => import('@/components/control/src/control.vue')),
+    VideoProcess: defineAsyncComponent(() => import('@/components/process/src/process.vue'))
   },
   data(){
     return{

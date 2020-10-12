@@ -16,7 +16,7 @@
 import { defineComponent, defineAsyncComponent } from 'vue';
 export default defineComponent({
   components: {
-    videoPanel: defineAsyncComponent(() => import('../components/panel.vue'))
+    videoPanel: defineAsyncComponent(() => import('../components/panel/src/panel.vue'))
   },
   props: {
     options: Object,

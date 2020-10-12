@@ -6,12 +6,18 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, inject } from 'vue'
+// inject('video')
+export default defineComponent({
+  name: 'VideoControl',
   props: {
-    
+    type: {
+      type: String,
+      default: ''
+    }
   },
-}
+})
 </script>
 
 <style>

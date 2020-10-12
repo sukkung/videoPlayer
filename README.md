@@ -68,6 +68,13 @@ const AsyncComp = defineAsyncComponent({
 
 ## Teleport: https://v3.vuejs.org/guide/teleport.html#using-with-vue-components
 
+
+## EmitsOptions: https://v3.vuejs.org/guide/component-custom-events.html#defining-custom-events
+
+<span style="color: skyblue">Vue Test Utils</span>
+
+## VueTestUtils: https://vue-test-utils.vuejs.org/api/
+
 1.预览图： vp-preview
 2.加载缓冲
 3.暂停播放键
