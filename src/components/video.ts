@@ -1,7 +1,7 @@
 export interface VideoOptions {
   source: string
   title?: string
-  style?: HTMLStyleElement
+  style?: CSSStyleDeclaration
   controlList?: Control[] // 做到写
   videoList?: Video[]
   process?: ProcessOptions
@@ -11,7 +11,7 @@ export interface ProcessOptions {
   percent: string | number
   icon?: string // 进度条圈圈替代
   pointList?: Point[] // 事件点
-  style?: HTMLStyleElement // 进度条样式
+  style?: CSSStyleDeclaration // 进度条样式
 }
 interface Video {
   options: VideoOptions

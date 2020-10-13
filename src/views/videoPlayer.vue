@@ -36,9 +36,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  @import '@/assets/css/video.scss'; // video
-  @import '@/assets/css/media.scss'; // 兼容pc/mobile
-  // @import '@/assets/css/icon.scss'; // icon
-</style>

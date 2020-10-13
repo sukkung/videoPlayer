@@ -4,30 +4,23 @@
 
     </div>
     <div class="video-panel__bottom">
-      <!-- paly pause next timer -->
-      <div class="video-panel__bottom--left"></div>
-      <!-- bullet screen -->
-      <div class="video-panel__bottom--mid"></div>
-      <!-- speed resolution -->
-      <div class="video-panel__bottom--resource">
-        <video-control></video-control>
-      </div>
-      <video-process></video-process>
+      <video-control type="play"></video-control>
+      <video-control type="full"></video-control>
+      <video-control type="next"></video-control>
     </div>
+    <video-process></video-process>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineAsyncComponent, defineComponent } from 'vue'
 export default defineComponent({
   components: {
     VideoControl: defineAsyncComponent(() => import('@/components/control/src/control.vue')),
     VideoProcess: defineAsyncComponent(() => import('@/components/process/src/process.vue'))
   },
-  data(){
-    return{
-      playBtn: require('@/assets/img/play.png'),
-    }
+  setup(props, ctx) {
+    return {}
   }
 })
 </script>

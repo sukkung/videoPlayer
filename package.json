@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --model development",
     "build": "vue-cli-service build",
     "test": "jest",
     "test:unit": "vue-cli-service test:unit",

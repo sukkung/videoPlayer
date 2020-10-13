@@ -1,0 +1,14 @@
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.cursor { cursor: pointer; }
+
+
+$colors: (transparent, transparent), (white, white);
+
+@each $name, $color in $colors {
+  .color-#{$name} {
+    color: $color;
+  }
+  .bgcolor-#{$name} {
+    background-color: $color;
+  }
+}
