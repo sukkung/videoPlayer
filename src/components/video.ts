@@ -1,7 +1,16 @@
+type Style<T> = {[key in keyof T]? : key extends number ? never : T[key]}
+// type test = Style<CSSStyleDeclaration>
+// type test1 = {[key in keyof CSSStyleDeclaration]? : key extends number ? never : CSSStyleDeclaration[key]}
+
+// const style: test = {
+//   height: '20px'
+// }
+
 export interface VideoOptions {
   source: string
   title?: string
-  style?: CSSStyleDeclaration
+  style?: Style<CSSStyleDeclaration>
+  // style?: CSSStyleDeclaration,
   controlList?: Control[] // 做到写
   videoList?: Video[]
   process?: ProcessOptions
@@ -11,7 +20,7 @@ export interface ProcessOptions {
   percent: string | number
   icon?: string // 进度条圈圈替代
   pointList?: Point[] // 事件点
-  style?: CSSStyleDeclaration // 进度条样式
+  style?: Style<CSSStyleDeclaration> // 进度条样式
 }
 interface Video {
   options: VideoOptions
