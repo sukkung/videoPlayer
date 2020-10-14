@@ -1,6 +1,5 @@
-type Style<T> = {[key in keyof T]? : key extends number ? never : T[key]}
+type Style<T> = {[key in keyof T]? : T[key]}
 // type test = Style<CSSStyleDeclaration>
-// type test1 = {[key in keyof CSSStyleDeclaration]? : key extends number ? never : CSSStyleDeclaration[key]}
 
 // const style: test = {
 //   height: '20px'
