@@ -1,14 +1,15 @@
-type Style<T> = {[key in keyof T]? : T[key]}
+// type Style<T> = {[key in keyof T]? : T[key]}
+type Style = Partial<CSSStyleDeclaration>
 // type test = Style<CSSStyleDeclaration>
 
-// const style: test = {
+// const style: Style = {
 //   height: '20px'
 // }
 
 export interface VideoOptions {
   source: string
   title?: string
-  style?: Style<CSSStyleDeclaration>
+  style?: Style
   // style?: CSSStyleDeclaration,
   controlList?: Control[] // 做到写
   videoList?: Video[]
@@ -19,7 +20,7 @@ export interface ProcessOptions {
   percent: string | number
   icon?: string // 进度条圈圈替代
   pointList?: Point[] // 事件点
-  style?: Style<CSSStyleDeclaration> // 进度条样式
+  style?: Style // 进度条样式
 }
 interface Video {
   options: VideoOptions
