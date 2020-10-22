@@ -27,7 +27,6 @@ export default {
   },
   setup() {
     const options: VideoOptions = reactive({
-      // source: require('@/assets/img/video.mp4')
       source: 'https://www.google.com/earth/assets/static/videos/Earth_Studio_Mobile.mp4',
     })
     return {
