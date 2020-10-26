@@ -7,7 +7,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, computed} from 'vue';
+import { defineComponent, onMounted, ref, computed, onBeforeUnmount} from 'vue';
+
+import { on, off } from '@/utils/dom'
 
 export default defineComponent({
     name: 'videoProcess',
@@ -28,12 +30,12 @@ export default defineComponent({
       let right: number // 进度条结束坐标
       let lock = false
      
-      const getPageX = (event: TouchEvent | MouseEvent) => {
+      const getPageX = (event: TouchEvent | MouseEvent | Event) => {
         return isMobile.value ? (event as TouchEvent).touches[0].pageX : (event as MouseEvent).offsetX
       }
       function onDragStart(){
       }
-      const onDragging = (event: TouchEvent | MouseEvent) => {
+      const onDragging = (event: TouchEvent | MouseEvent | Event) => {
         if(lock) return
         const currentX = getPageX(event)
         if(currentX <= left ){
@@ -55,13 +57,13 @@ export default defineComponent({
       }
       onMounted(() => {
         if(isMobile.value){
-          thumb.value.addEventListener('touchstart', onDragStart)
-          thumb.value.addEventListener('touchmove', onDragging)
-          thumb.value.addEventListener('touchend', onDragEnd)          
+          on(thumb.value, 'mousedown', onDragStart)   
+          on(thumb.value, 'mousemove', onDragging)   
+          on(thumb.value, 'mouseup', onDragEnd)       
         }else{
-          thumb.value.addEventListener('mousedown', onDragStart)
-          thumb.value.addEventListener('mousemove', onDragging)
-          thumb.value.addEventListener('mouseup', onDragEnd)     
+          on(thumb.value, 'mousedown', onDragStart)   
+          on(thumb.value, 'mousemove', onDragging)   
+          on(thumb.value, 'mouseup', onDragEnd)   
         }
 
         runWidth = runway.value.clientWidth
@@ -69,6 +71,11 @@ export default defineComponent({
         right = runway.value.getBoundingClientRect().right
       })
 
+      onBeforeUnmount(() => {
+        off(thumb.value, 'mousedown', onDragStart)   
+        off(thumb.value, 'mousemove', onDragging)   
+        off(thumb.value, 'mouseup', onDragEnd)       
+      })
       return{
         progress,
         thumb,
