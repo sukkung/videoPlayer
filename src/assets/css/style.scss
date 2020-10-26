@@ -1,6 +1,7 @@
 .flex-center { display: flex; justify-content: center; align-items: center; }
 .cursor { cursor: pointer; }
 
+* { margin: 0; padding: 0; }
 
 $colors: (transparent, transparent), (white, white);
 
@@ -12,3 +13,14 @@ $colors: (transparent, transparent), (white, white);
     background-color: $color;
   }
 }
+
+html,body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none; 
+  user-select: none;
+  overflow: hidden;}
+
+  // #app, .video-player { height: 100%; }

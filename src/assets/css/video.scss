@@ -1,6 +1,11 @@
+$processHeight: 20px;
+$videoPanelHeight: 80px;
 .video-player{
     position: relative;
-    $videoPanelHeight: 80px;
+    .video-el {
+        width: 100%;
+        height: 100%;
+    }
     .video-panel{
         position: absolute;
         left: 0%;
@@ -28,9 +33,9 @@
 .video-process{
     position: absolute;
     left: 0;
-    bottom: 9%;
+    bottom: $videoPanelHeight - $processHeight / 2;
     width: 100%;
-    height: 20px;
+    height: $processHeight;
     .video-process__runway{
         position: absolute;
         top: 50%;

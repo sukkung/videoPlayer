@@ -32,7 +32,8 @@ export default defineComponent({
   emits: ['click'],
   setup(props, ctx) {
     const handleClick = (evt: Event) => {
-      ctx.emit('click', evt)
+      // if (props.type === 'full') {}
+      ctx.emit('click', evt, props.type)
     }
     const defaultPluginStyle = computed(() => {
       switch(props.type) {

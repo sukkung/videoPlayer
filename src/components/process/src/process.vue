@@ -11,6 +11,8 @@ import { defineComponent, onMounted, ref, computed, onBeforeUnmount} from 'vue';
 
 import { on, off } from '@/utils/dom'
 
+import { isMobile } from '@/utils/'
+
 export default defineComponent({
     name: 'videoProcess',
     props: {
@@ -24,7 +26,7 @@ export default defineComponent({
       const thumb: any = ref(null)
       const runway: any = ref(null)
       const progress = ref(20) // 进度条百分数
-      const isMobile = computed(() => /Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent))
+      
       let runWidth: number // 进度条宽度
       let left: number // 进度条开始坐标
       let right: number // 进度条结束坐标
@@ -56,6 +58,7 @@ export default defineComponent({
         progress.value = currentX / runWidth * 100
       }
       onMounted(() => {
+        console.log('process mounted')
         if(isMobile.value){
           on(thumb.value, 'mousedown', onDragStart)   
           on(thumb.value, 'mousemove', onDragging)   
